@@ -1,9 +1,10 @@
 import { HStack, Image } from "@chakra-ui/react";
 import ProfileMenu from "./ProfileMenu";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Navbar() {
   return (
-    <HStack h={16} justify="space-between">
+    <HStack h={16} justify="space-between" px={4}>
       <Image
         src="https://cdn.dribbble.com/users/404971/screenshots/1241486/pizza-logo.png"
         width="60x"
@@ -12,6 +13,7 @@ export default function Navbar() {
 
       <HStack>
         <ProfileMenu />
+        <ThemeSwitcher />
       </HStack>
     </HStack>
   );
