@@ -8,16 +8,25 @@ import {
   HStack,
   Text,
   Tooltip,
+  IconButton,
+  Box,
 } from "@chakra-ui/react";
 import { IoLogOutOutline } from "react-icons/io5";
 export default function ProfileMenu() {
   return (
     <Menu>
-      <Tooltip label={"Profile menu"}>
-        <MenuButton aria-label="Profile Manu">
-          <Avatar name={"Harsh Mangalam"} size={"sm"} src={""} />
-        </MenuButton>
-      </Tooltip>
+      <Box>
+        <Tooltip label={"Profile menu"}>
+          <MenuButton as={IconButton} aria-label="Profile Manu">
+            <Avatar
+              rounded={"md"}
+              name={"Harsh Mangalam"}
+              size={"sm"}
+              src={""}
+            />
+          </MenuButton>
+        </Tooltip>
+      </Box>
 
       <MenuList>
         <MenuItem as="a">

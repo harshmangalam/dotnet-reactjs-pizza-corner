@@ -1,6 +1,7 @@
 import { HStack, Image } from "@chakra-ui/react";
 import ProfileMenu from "./ProfileMenu";
 import ThemeSwitcher from "./ThemeSwitcher";
+import PizzaBasket from "./PizzaBasket";
 
 export default function Navbar() {
   return (
@@ -13,6 +14,7 @@ export default function Navbar() {
 
       <HStack>
         <ProfileMenu />
+        <PizzaBasket />
         <ThemeSwitcher />
       </HStack>
     </HStack>
