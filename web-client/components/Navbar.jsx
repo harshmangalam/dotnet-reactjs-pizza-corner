@@ -1,16 +1,16 @@
-import { HStack, Image } from "@chakra-ui/react";
+import { Heading, HStack, Icon, Image } from "@chakra-ui/react";
 import ProfileMenu from "./ProfileMenu";
 import ThemeSwitcher from "./ThemeSwitcher";
 import PizzaBasket from "./PizzaBasket";
+import { FaPizzaSlice } from "react-icons/fa";
 
 export default function Navbar() {
   return (
-    <HStack h={16} justify="space-between" px={4}>
-      <Image
-        src="https://cdn.dribbble.com/users/404971/screenshots/1241486/pizza-logo.png"
-        width="60x"
-        height="60px"
-      />
+    <HStack h={16} justify="space-between" px={4} borderBottomWidth="2px">
+      <HStack>
+        <Icon color={"yellow.500"} as={FaPizzaSlice} fontSize="5xl" />
+        <Heading fontSize={"xl"}>Pizza Shop</Heading>
+      </HStack>
 
       <HStack>
         <ProfileMenu />
