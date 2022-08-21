@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import Category from "../../components/Category";
-export default function Home() {
+export default function HomePage() {
   return (
     <Container maxW={"7xl"}>
       <Stack
