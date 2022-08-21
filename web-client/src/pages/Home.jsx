@@ -8,11 +8,11 @@ import {
   Button,
   Image,
   Icon,
-  IconButton,
-  createIcon,
   useColorModeValue,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { AiOutlineUserAdd } from "react-icons/ai";
+import Category from "../../components/Category";
 export default function Home() {
   return (
     <Container maxW={"7xl"}>
@@ -96,6 +96,12 @@ export default function Home() {
           </Box>
         </Flex>
       </Stack>
+
+      <SimpleGrid mt={8} columns={[1, 2, 3, 4, 5]} spacing={6}>
+        {[...new Array(5)].map((category) => (
+          <Category />
+        ))}
+      </SimpleGrid>
     </Container>
   );
 }
