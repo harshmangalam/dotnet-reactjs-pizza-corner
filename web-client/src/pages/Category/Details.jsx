@@ -1,6 +1,6 @@
 import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
-import Pizza from "../../components/Pizza";
-export default function CategoryDetailPage() {
+import Pizza from "../../../components/Pizza";
+export default function CategoryDetailsPage() {
   return (
     <Box>
       <Heading fontSize={"2xl"} textTransform="uppercase" mt={4}>

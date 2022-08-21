@@ -6,11 +6,11 @@ import Navbar from "../components/Navbar";
 const HomePage = lazy(() => import("./pages/Home"));
 const PizzaPage = lazy(() => import("./pages/Pizza"));
 
-const AuthPage = lazy(() => import("./pages/auth"));
-const AuthLoginPage = lazy(() => import("./pages/auth/Login"));
-const AuthSignupPage = lazy(() => import("./pages/auth/Signup"));
+const AuthPage = lazy(() => import("./pages/Auth"));
+const AuthLoginPage = lazy(() => import("./pages/Auth/Login"));
+const AuthSignupPage = lazy(() => import("./pages/Auth/Signup"));
 
-const CategoryDetailPage = lazy(() => import("./pages/CategoryDetail"));
+const CategoryDetailPage = lazy(() => import("./pages/Category/Details"));
 export default function App() {
   return (
     <Box>
