@@ -4,6 +4,7 @@ import {
   Button,
   Heading,
   HStack,
+  Icon,
   IconButton,
   Image,
   Tag,
@@ -42,7 +43,13 @@ export default function Pizza() {
             <IconButton
               size={"sm"}
               rounded="full"
-              icon={<MdOutlineRadioButtonChecked size={20} color={"tomato"} />}
+              icon={
+                <Icon
+                  as={MdOutlineRadioButtonChecked}
+                  color="red.300"
+                  fontSize="lg"
+                />
+              }
             />
           </Tooltip>
         </HStack>
