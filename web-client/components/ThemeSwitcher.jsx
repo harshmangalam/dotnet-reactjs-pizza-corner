@@ -11,7 +11,6 @@ export default function ThemeSwitcher() {
       >
         <IconButton
           onClick={toggleColorMode}
-          rounded={"full"}
           aria-label="Theme switch"
           icon={
             <Icon as={colorMode === "dark" ? CgSun : CgMoon} fontSize={"lg"} />
