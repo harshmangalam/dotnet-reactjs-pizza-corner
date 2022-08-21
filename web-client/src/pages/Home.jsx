@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import Category from "../../components/Category";
+import { Link } from "react-router-dom";
 export default function HomePage() {
   return (
     <Box>
@@ -44,7 +45,14 @@ export default function HomePage() {
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: "column", sm: "row" }}
           >
-            <Button rounded={"full"} size={"lg"} colorScheme="blue" px={6}>
+            <Button
+              to="/pizza"
+              as={Link}
+              rounded={"full"}
+              size={"lg"}
+              colorScheme="blue"
+              px={6}
+            >
               Explore Now
             </Button>
             <Button
