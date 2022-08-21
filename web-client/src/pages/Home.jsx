@@ -1,5 +1,4 @@
 import {
-  Container,
   Stack,
   Flex,
   Box,
@@ -15,7 +14,7 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 import Category from "../../components/Category";
 export default function HomePage() {
   return (
-    <Container maxW={"7xl"}>
+    <Box>
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
@@ -102,7 +101,7 @@ export default function HomePage() {
           <Category />
         ))}
       </SimpleGrid>
-    </Container>
+    </Box>
   );
 }
 

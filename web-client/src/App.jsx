@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -10,12 +10,14 @@ export default function App() {
     <Box>
       <Navbar />
       <Box py={6}>
-        <Suspense fallback={<p>Loading Page...</p>}>
-          <Routes>
-            <Route path="" element={<HomePage />} />
-            <Route path="pizza" element={<PizzaPage />} />
-          </Routes>
-        </Suspense>
+        <Container maxW={"container.xl"}>
+          <Suspense fallback={<p>Loading Page...</p>}>
+            <Routes>
+              <Route path="" element={<HomePage />} />
+              <Route path="pizza" element={<PizzaPage />} />
+            </Routes>
+          </Suspense>
+        </Container>
       </Box>
     </Box>
   );
