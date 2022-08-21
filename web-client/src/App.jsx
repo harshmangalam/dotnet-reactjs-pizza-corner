@@ -9,12 +9,14 @@ export default function App() {
   return (
     <Box>
       <Navbar />
-      <Suspense fallback={<p>Loading Page...</p>}>
-        <Routes>
-          <Route path="" element={<HomePage />} />
-          <Route path="pizza" element={<PizzaPage />} />
-        </Routes>
-      </Suspense>
+      <Box py={6}>
+        <Suspense fallback={<p>Loading Page...</p>}>
+          <Routes>
+            <Route path="" element={<HomePage />} />
+            <Route path="pizza" element={<PizzaPage />} />
+          </Routes>
+        </Suspense>
+      </Box>
     </Box>
   );
 }

@@ -1,9 +1,4 @@
-import {
-  Box,
-  Container,
-  SimpleGrid,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Container, SimpleGrid } from "@chakra-ui/react";
 import Pizza from "../../components/Pizza";
 export default function PizzaPage() {
   return (

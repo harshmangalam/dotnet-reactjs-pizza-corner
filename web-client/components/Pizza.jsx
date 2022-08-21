@@ -1,7 +1,29 @@
-import { AspectRatio, Box, Image, useColorModeValue } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  Button,
+  Heading,
+  HStack,
+  IconButton,
+  Image,
+  Tag,
+  TagLabel,
+  TagLeftIcon,
+  Text,
+  Tooltip,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { BiRupee } from "react-icons/bi";
+import { GiShoppingCart } from "react-icons/gi";
+import { MdOutlineRadioButtonChecked } from "react-icons/md";
 export default function Pizza() {
   return (
-    <Box bg={useColorModeValue("white", "gray.700")} p={4}>
+    <Box
+      bg={useColorModeValue("white", "gray.700")}
+      p={4}
+      shadow="outline"
+      rounded="lg"
+    >
       <AspectRatio maxW="400px" ratio={1 / 1} mx="auto">
         <Image
           rounded={"lg"}
@@ -11,6 +33,37 @@ export default function Pizza() {
           }
         />
       </AspectRatio>
+      <Box mt={4}>
+        <HStack>
+          <Heading flex={1} fontSize={"lg"}>
+            CHICKEN GOLDEN DELIGHT
+          </Heading>
+          <Tooltip label="Non Veg Pizza">
+            <IconButton
+              size={"sm"}
+              rounded="full"
+              icon={<MdOutlineRadioButtonChecked size={20} color={"tomato"} />}
+            />
+          </Tooltip>
+        </HStack>
+        <Text mt={2}>
+          Mmm! Barbeque chicken with a topping of golden corn loaded with extra
+          cheese. Worth its
+        </Text>
+        <HStack mt={6} justify={"space-between"} w="full">
+          <Button
+            size={"sm"}
+            leftIcon={<GiShoppingCart size={20} />}
+            colorScheme={"twitter"}
+          >
+            Add to Basket
+          </Button>
+          <Tag size={"lg"} rounded="full" variant="subtle" colorScheme="purple">
+            <TagLeftIcon boxSize="20px" as={BiRupee} />
+            <TagLabel>140</TagLabel>
+          </Tag>
+        </HStack>
+      </Box>
     </Box>
   );
 }
