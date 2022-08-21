@@ -16,6 +16,7 @@ import { GiFullPizza } from "react-icons/gi";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { SiDevdotto } from "react-icons/si";
+import Logo from "./Logo";
 
 const ListHeader = ({ children }) => {
   return (
@@ -103,11 +104,10 @@ export default function LargeWithLogoCentered() {
             ml: 8,
           }}
         >
-          <Icon as={GiFullPizza} fontSize="6xl" />
+          <Logo />
         </Flex>
-        <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-          © {new Date().getFullYear()} Made open source in India by Harsh
-          Mangalam
+        <Text pt={6} fontSize={"sm"} textAlign={"center"} fontFamily="cursive">
+          Pizza Corner An Open Source Project Developed In India
         </Text>
       </Box>
     </Box>
