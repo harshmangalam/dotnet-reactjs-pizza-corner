@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 
 const HomePage = lazy(() => import("./pages/Home"));
 const PizzaPage = lazy(() => import("./pages/Pizza"));
+const AuthLoginPage = lazy(() => import("./pages/auth/Login"));
 export default function App() {
   return (
     <Box>
@@ -15,6 +16,7 @@ export default function App() {
             <Routes>
               <Route path="" element={<HomePage />} />
               <Route path="pizza" element={<PizzaPage />} />
+              <Route path="auth" element={<AuthLoginPage />} />
             </Routes>
           </Suspense>
         </Container>

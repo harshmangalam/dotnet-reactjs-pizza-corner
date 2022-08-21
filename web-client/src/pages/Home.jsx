@@ -56,6 +56,8 @@ export default function HomePage() {
               Explore Now
             </Button>
             <Button
+              as={Link}
+              to="/auth"
               rounded={"full"}
               size={"lg"}
               fontWeight={"normal"}
