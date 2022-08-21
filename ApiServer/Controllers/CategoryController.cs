@@ -44,4 +44,22 @@ public class CategoryController : ControllerBase
     }
 
 
+    [HttpPut("{id:length(24)}")]
+    public async Task<IActionResult> Update(string id, Category updatedCategory)
+    {
+        var category = await _categoryService.GetAsync(id);
+
+        if (category is null)
+        {
+            return NotFound();
+        }
+
+        updatedCategory.Id = category.Id;
+
+        await _categoryService.UpdateAsync(id, updatedCategory);
+
+        return NoContent();
+    }
+
+
 }
