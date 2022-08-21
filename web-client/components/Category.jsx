@@ -5,10 +5,17 @@ import {
   Image,
   AspectRatio,
 } from "@chakra-ui/react";
-
+import { Link } from "react-router-dom";
 export default function Category() {
   return (
-    <Box bg={useColorModeValue("white", "gray.700")} py={6} px={2} rounded="md">
+    <Box
+      as={Link}
+      to="/shsbsbyhsuyshhss"
+      bg={useColorModeValue("white", "gray.700")}
+      py={6}
+      px={2}
+      rounded="md"
+    >
       <AspectRatio maxW="200px" ratio={1 / 1} mx="auto">
         <Image
           rounded={"lg"}
