@@ -41,6 +41,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "contentful.csharp": {
+              "target": "Package",
+              "version": "[7.1.0, )"
             }
           },
           "imports": [
