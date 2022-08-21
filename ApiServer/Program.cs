@@ -1,6 +1,8 @@
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+using ApiServer.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<PizzaCornerDatabaseSettings>(builder.Configuration.GetSection("PizzaCornerDatabase"));
 var app = builder.Build();
 
 // health check 
