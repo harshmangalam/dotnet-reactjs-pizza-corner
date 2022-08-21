@@ -34,4 +34,14 @@ public class CategoryController : ControllerBase
         return category;
     }
 
+
+    [HttpPost]
+    public async Task<IActionResult> Post(Category newCategory)
+    {
+        await _categoryService.CreateAsync(newCategory);
+
+        return CreatedAtAction(nameof(Get), new { id = newCategory.Id }, newCategory);
+    }
+
+
 }
