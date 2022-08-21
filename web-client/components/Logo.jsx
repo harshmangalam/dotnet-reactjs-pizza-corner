@@ -6,8 +6,12 @@ export default function Logo() {
   return (
     <HStack as={Link} to="/">
       <Icon color={"yellow.500"} as={GiFullPizza} fontSize="5xl" />
-      <Heading display={["none", "block"]} fontSize={"xl"}>
-        PizzaHouse
+      <Heading
+        fontFamily={"cursive"}
+        display={["none", "block"]}
+        fontSize={"xl"}
+      >
+        Pizza Corner
       </Heading>
     </HStack>
   );
