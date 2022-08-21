@@ -9,6 +9,8 @@ const PizzaPage = lazy(() => import("./pages/Pizza"));
 const AuthPage = lazy(() => import("./pages/auth"));
 const AuthLoginPage = lazy(() => import("./pages/auth/Login"));
 const AuthSignupPage = lazy(() => import("./pages/auth/Signup"));
+
+const CategoryDetailPage = lazy(() => import("./pages/CategoryDetail"));
 export default function App() {
   return (
     <Box>
@@ -23,6 +25,8 @@ export default function App() {
                 <Route index element={<AuthLoginPage />} />
                 <Route path="signup" element={<AuthSignupPage />} />
               </Route>
+
+              <Route path="/:categoryId" element={<CategoryDetailPage />} />
             </Routes>
           </Suspense>
         </Container>
