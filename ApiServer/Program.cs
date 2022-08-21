@@ -1,8 +1,11 @@
 using ApiServer.Models;
+using ApiServer.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<PizzaCornerDatabaseSettings>(builder.Configuration.GetSection("PizzaCornerDatabase"));
+builder.Services.AddSingleton<CategoryService>();
 var app = builder.Build();
 
 // health check 
