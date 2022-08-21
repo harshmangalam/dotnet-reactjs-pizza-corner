@@ -6,7 +6,7 @@ import { FaPizzaSlice } from "react-icons/fa";
 
 export default function Navbar() {
   return (
-    <HStack h={16} justify="space-between" px={4} borderBottomWidth="2px">
+    <HStack h={16} justify="space-between" px={4} borderBottomWidth="1px">
       <HStack>
         <Icon color={"yellow.500"} as={FaPizzaSlice} fontSize="5xl" />
         <Heading fontSize={"xl"}>Pizza Shop</Heading>
