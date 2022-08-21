@@ -9,10 +9,13 @@ import {
   Icon,
   useColorModeValue,
   SimpleGrid,
+  HStack,
 } from "@chakra-ui/react";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import Category from "../../components/Category";
 import { Link } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
+import Pizza from "../../components/Pizza";
 export default function HomePage() {
   return (
     <Box>
@@ -106,11 +109,62 @@ export default function HomePage() {
         </Flex>
       </Stack>
 
-      <SimpleGrid mt={8} columns={[1, 2, 3, 4, 5]} spacing={6}>
-        {[...new Array(5)].map((category) => (
-          <Category />
-        ))}
-      </SimpleGrid>
+      <Box mt={8}>
+        <Stack
+          direction={["column", "row"]}
+          justify={"space-between"}
+          align="center"
+        >
+          <Heading fontSize={["2xl", "3xl"]}>Fatured Categories</Heading>
+          <Button
+            rightIcon={<BsArrowRight size={20} />}
+            as={Link}
+            to="/category"
+            variant={"ghost"}
+            size={"sm"}
+          >
+            Explore
+          </Button>
+        </Stack>
+        <SimpleGrid
+          justifyContent={"center"}
+          mt={6}
+          columns={[1, 2, 3, 4]}
+          spacing={6}
+        >
+          {[...new Array(4)].map((category) => (
+            <Category />
+          ))}
+        </SimpleGrid>
+      </Box>
+      <Box mt={8}>
+        <Stack
+          direction={["column", "row"]}
+          justify={"space-between"}
+          align="center"
+        >
+          <Heading fontSize={["2xl", "3xl"]}>Trending Pizzas</Heading>
+          <Button
+            rightIcon={<BsArrowRight size={20} />}
+            as={Link}
+            to="/pizza"
+            variant={"ghost"}
+            size={"sm"}
+          >
+            Explore
+          </Button>
+        </Stack>
+        <SimpleGrid
+          justifyContent={"center"}
+          mt={6}
+          columns={[1, 2, 3, 4]}
+          spacing={6}
+        >
+          {[...new Array(4)].map((pizza) => (
+            <Pizza />
+          ))}
+        </SimpleGrid>
+      </Box>
     </Box>
   );
 }

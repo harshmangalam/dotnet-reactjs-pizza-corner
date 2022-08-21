@@ -10,7 +10,7 @@ export default function Category() {
   return (
     <Box
       as={Link}
-      to="/shsbsbyhsuyshhss"
+      to="/category/shsbsbyhsuyshhss"
       bg={useColorModeValue("white", "gray.700")}
       py={6}
       px={2}
