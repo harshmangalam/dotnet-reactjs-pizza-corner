@@ -10,6 +10,8 @@ const AuthPage = lazy(() => import("./pages/Auth"));
 const AuthLoginPage = lazy(() => import("./pages/Auth/Login"));
 const AuthSignupPage = lazy(() => import("./pages/Auth/Signup"));
 
+const CategoryPage = lazy(() => import("./pages/Category"));
+const CategoryListPage = lazy(() => import("./pages/Category/List"));
 const CategoryDetailPage = lazy(() => import("./pages/Category/Details"));
 export default function App() {
   return (
@@ -26,7 +28,10 @@ export default function App() {
                 <Route path="signup" element={<AuthSignupPage />} />
               </Route>
 
-              <Route path="/:categoryId" element={<CategoryDetailPage />} />
+              <Route path="category" element={<CategoryPage />}>
+                <Route index element={<CategoryListPage />} />
+                <Route path=":categoryId" element={<CategoryDetailPage />} />
+              </Route>
             </Routes>
           </Suspense>
         </Container>
