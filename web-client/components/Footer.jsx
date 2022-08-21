@@ -1,23 +1,19 @@
 import {
   Box,
   Container,
-  Link,
   SimpleGrid,
   Stack,
   Text,
   Flex,
-  Tag,
   useColorModeValue,
   Button,
   Icon,
 } from "@chakra-ui/react";
-import { GiFullPizza } from "react-icons/gi";
-
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { SiDevdotto } from "react-icons/si";
 import Logo from "./Logo";
-
+import { Link } from "react-router-dom";
 const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
@@ -35,38 +31,55 @@ export default function LargeWithLogoCentered() {
       <Container as={Stack} maxW={"container.xl"} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={"flex-start"}>
-            <ListHeader>Product</ListHeader>
-            <Link href={"#"}>Overview</Link>
-            <Stack direction={"row"} align={"center"} spacing={2}>
-              <Link href={"#"}>Features</Link>
-              <Tag
-                size={"sm"}
-                bg={useColorModeValue("green.300", "green.800")}
-                ml={2}
-                color={"white"}
+            <ListHeader>Category</ListHeader>
+            {[...new Array(4)].map((pizza) => (
+              <Button
+                variant="link"
+                fontWeight={"normal"}
+                _hover={{
+                  textTransform: "none",
+                  shadow: "outline",
+                }}
+                as={Link}
+                to="/pizza/3refref"
               >
-                New
-              </Tag>
-            </Stack>
-            <Link href={"#"}>Tutorials</Link>
-            <Link href={"#"}>Pricing</Link>
-            <Link href={"#"}>Releases</Link>
+                Non vegg pizza
+              </Button>
+            ))}
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Company</ListHeader>
-            <Link href={"#"}>About Us</Link>
-            <Link href={"#"}>Press</Link>
-            <Link href={"#"}>Careers</Link>
-            <Link href={"#"}>Contact Us</Link>
-            <Link href={"#"}>Partners</Link>
+            {company.map((link) => (
+              <Button
+                as={Link}
+                variant="link"
+                fontWeight={"normal"}
+                _hover={{
+                  textTransform: "none",
+                  shadow: "outline",
+                }}
+                to={link.href}
+              >
+                {link.name}
+              </Button>
+            ))}
           </Stack>
           <Stack align={"flex-start"}>
-            <ListHeader>Legal</ListHeader>
-            <Link href={"#"}>Cookies Policy</Link>
-            <Link href={"#"}>Privacy Policy</Link>
-            <Link href={"#"}>Terms of Service</Link>
-            <Link href={"#"}>Law Enforcement</Link>
-            <Link href={"#"}>Status</Link>
+            <ListHeader>Locations</ListHeader>
+            {locations.map((link) => (
+              <Button
+                variant="link"
+                fontWeight={"normal"}
+                _hover={{
+                  textTransform: "none",
+                  shadow: "outline",
+                }}
+                as={Link}
+                to={link.href}
+              >
+                {link.name}
+              </Button>
+            ))}
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Social Media</ListHeader>
@@ -135,4 +148,27 @@ const socilaLinks = [
     icon: FaTwitter,
     href: "https://twitter.com/HarshMangalam6",
   },
+];
+
+const company = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "About Us",
+    href: "/about-us",
+  },
+  {
+    name: "Contact Us",
+    href: "/contact-us",
+  },
+];
+
+const locations = [
+  { name: "Hyderabad", href: "/" },
+  { name: "Bangalore", href: "/" },
+  { name: "Delhi", href: "/" },
+  { name: "Surat", href: "/" },
+  { name: "Kolkata", href: "/" },
 ];
