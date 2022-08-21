@@ -15,6 +15,7 @@ export default function Category() {
       py={6}
       px={2}
       rounded="md"
+      borderWidth={"2px"}
     >
       <AspectRatio maxW="200px" ratio={1 / 1} mx="auto">
         <Image
