@@ -1,4 +1,5 @@
-
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
