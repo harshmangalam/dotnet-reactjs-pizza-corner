@@ -19,8 +19,8 @@ export default function CategoryListPage() {
   }
   return (
     <SimpleGrid columns={[1, 1, 2, 3, 4]} spacing={6}>
-      {[...new Array(9)].map((category) => (
-        <Category />
+      {data.data.map((category) => (
+        <Category {...category} />
       ))}
     </SimpleGrid>
   );
