@@ -22,7 +22,7 @@ const queryClient = new QueryClient();
 
 // axios gloobal setup
 
-axios.defaults.baseURL = "http://localhost:5045/";
+axios.defaults.baseURL = "http://localhost:5045/api/";
 
 export default function App() {
   return (
