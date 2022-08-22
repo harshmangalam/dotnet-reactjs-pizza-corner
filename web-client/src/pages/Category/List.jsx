@@ -20,7 +20,7 @@ export default function CategoryListPage() {
   return (
     <SimpleGrid columns={[1, 1, 2, 3, 4]} spacing={6}>
       {data.data.map((category) => (
-        <Category {...category} />
+        <Category key={category.id} {...category} />
       ))}
     </SimpleGrid>
   );

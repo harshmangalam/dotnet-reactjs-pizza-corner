@@ -6,11 +6,11 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-export default function Category() {
+export default function Category({ id, name, image }) {
   return (
     <Box
       as={Link}
-      to="/category/shsbsbyhsuyshhss"
+      to={`/category/${id}`}
       bg={useColorModeValue("white", "gray.700")}
       py={6}
       px={2}
@@ -18,13 +18,7 @@ export default function Category() {
       borderWidth={"2px"}
     >
       <AspectRatio maxW="200px" ratio={1 / 1} mx="auto">
-        <Image
-          rounded={"lg"}
-          objectFit={"cover"}
-          src={
-            "https://www.dominos.co.in/theme2/front/images/menu-images/my-nonveg.webp"
-          }
-        />
+        <Image rounded={"lg"} objectFit={"cover"} src={image} />
       </AspectRatio>
 
       <Heading
@@ -34,7 +28,7 @@ export default function Category() {
         textTransform="uppercase"
         mt={4}
       >
-        Non Veg Pizza
+        {name}
       </Heading>
     </Box>
   );
