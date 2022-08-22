@@ -1,4 +1,4 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Stack } from "@chakra-ui/react";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
@@ -27,9 +27,9 @@ axios.defaults.baseURL = "http://localhost:5045/";
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Box>
+      <Stack justify={"space-between"} minH={"100vh"}>
         <Navbar />
-        <Box py={6}>
+        <Box py={6} flexGrow>
           <Container maxW={"container.xl"}>
             <Suspense fallback={<p>Loading Page...</p>}>
               <Routes>
@@ -49,7 +49,7 @@ export default function App() {
           </Container>
         </Box>
         <Footer />
-      </Box>
+      </Stack>
     </QueryClientProvider>
   );
 }
