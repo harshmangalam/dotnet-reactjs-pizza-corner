@@ -1,5 +1,5 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 
 export default function DataError({ error }) {
-  return <Box as="pre">{JSON.stringify(error, null, 4)}</Box>;
+  return <Center as="pre">{JSON.stringify(error, null, 4)}</Center>;
 }
