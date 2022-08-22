@@ -1,8 +1,8 @@
 import { Box, Container } from "@chakra-ui/react";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 

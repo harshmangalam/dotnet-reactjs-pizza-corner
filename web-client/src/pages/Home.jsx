@@ -12,10 +12,10 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { AiOutlineUserAdd } from "react-icons/ai";
-import Category from "../../components/Category";
+import Category from "../components/Category";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
-import Pizza from "../../components/Pizza";
+import Pizza from "../components/Pizza";
 export default function HomePage() {
   return (
     <Box>
