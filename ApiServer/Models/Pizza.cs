@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace ApiServer.Models;
 
 
-public class Category
+public class Pizza
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -15,6 +15,5 @@ public class Category
 
     public string Image { get; set; }
 
-    public IQueryable<Pizza> Pizzas {get;}
-
+    public Category PizzaCategory {get;set;}
 }
