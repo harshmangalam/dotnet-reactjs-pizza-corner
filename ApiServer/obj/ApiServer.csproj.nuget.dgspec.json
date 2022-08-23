@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\Project\\pizza-shop\\ApiServer\\ApiServer.csproj": {}
+    "/home/harsh/Projects/dotnet-reactjs-pizza-corner/ApiServer/ApiServer.csproj": {}
   },
   "projects": {
-    "D:\\Development\\Project\\pizza-shop\\ApiServer\\ApiServer.csproj": {
+    "/home/harsh/Projects/dotnet-reactjs-pizza-corner/ApiServer/ApiServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\Project\\pizza-shop\\ApiServer\\ApiServer.csproj",
+        "projectUniqueName": "/home/harsh/Projects/dotnet-reactjs-pizza-corner/ApiServer/ApiServer.csproj",
         "projectName": "ApiServer",
-        "projectPath": "D:\\Development\\Project\\pizza-shop\\ApiServer\\ApiServer.csproj",
-        "packagesPath": "C:\\Users\\Harsh Mangalam\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\Project\\pizza-shop\\ApiServer\\obj\\",
+        "projectPath": "/home/harsh/Projects/dotnet-reactjs-pizza-corner/ApiServer/ApiServer.csproj",
+        "packagesPath": "/home/harsh/.nuget/packages/",
+        "outputPath": "/home/harsh/Projects/dotnet-reactjs-pizza-corner/ApiServer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Harsh Mangalam\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/harsh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,11 +53,24 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.7, 6.0.7]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.7, 6.0.7]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.7, 6.0.7]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -66,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }
