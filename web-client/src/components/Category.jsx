@@ -12,13 +12,12 @@ export default function Category({ id, name, image }) {
       as={Link}
       to={`/category/${id}`}
       bg={useColorModeValue("white", "gray.700")}
-      py={6}
-      px={2}
+     
       rounded="md"
       borderWidth={"2px"}
     >
-      <AspectRatio maxW="200px" ratio={1 / 1} mx="auto">
-        <Image rounded={"lg"} objectFit={"cover"} src={image} />
+      <AspectRatio w="full" maxW="300px" ratio={1 / 1} mx="auto">
+        <Image roundedTop={"md"} objectFit={"cover"} src={image} />
       </AspectRatio>
 
       <Heading
@@ -27,6 +26,7 @@ export default function Category({ id, name, image }) {
         fontWeight={500}
         textTransform="uppercase"
         mt={4}
+        p={2}
       >
         {name}
       </Heading>
