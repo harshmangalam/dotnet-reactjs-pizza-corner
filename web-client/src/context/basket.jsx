@@ -7,7 +7,7 @@ export default function BasketProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addToBasket = (newPizza) => {
-    setPizza((cart) => [...cart, { item: newPizza, count: 1 }]);
+    setCart((cart) => [...cart, { item: newPizza, count: 1 }]);
   };
 
   return (
