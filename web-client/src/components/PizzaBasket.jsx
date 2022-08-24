@@ -39,26 +39,28 @@ export default function PizzaBasket() {
           </Tooltip>
         </Box>
       </PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent >
         <PopoverArrow />
         <PopoverCloseButton />
         <PopoverHeader>Pizza Basket</PopoverHeader>
         <PopoverBody>
           <Stack spacing={4} mb={4}>
-            {[...new Array(6)].map((item) => (
-              <HStack justify={"space-between"}>
+            {cart.length ? cart.map(({item,count}) => (
+              <Flex align={"flex-start"} justify={"space-between"} key={item._id}>
                 <HStack>
-                  <Avatar src="https://www.dominos.co.in/theme2/front/images/menu-images/my-nonveg.webp" />
+                  <Avatar src={item.image} />
                   <Stack spacing={0}>
-                    <Heading fontSize={"md"}>Non veg pizza</Heading>
-                    <Text fontSize={"sm"}>Rs 234</Text>
+                    <Heading fontSize={"sm"}>{item.name}</Heading>
+                    <Text fontSize={"sm"}>Rs {item.price}</Text>
                   </Stack>
                 </HStack>
-                <Tag rounded={"full"} colorScheme="purple">
-                  3 Items
+                <Tag fontSize={"sm"} colorScheme="purple">
+                  {count}
                 </Tag>
-              </HStack>
-            ))}
+              </Flex>
+            )): (
+              <Text textAlign={"center"}>No Pizza</Text>
+            )}
           </Stack>
 
           <Divider mt={4} mb={2} />
