@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors({
-  origin:["http://localhost:5173/"]
+  origin:["http://localhost:5173"]
 }))
 app.get("/", (req, res, next) => {
   res.status(200).json({ message: "Server is up and running" });
