@@ -13,11 +13,25 @@ import {
   Text,
   Tooltip,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
 import { BiRupee } from "react-icons/bi";
 import { GiShoppingCart } from "react-icons/gi";
 import { MdOutlineRadioButtonChecked } from "react-icons/md";
-export default function Pizza() {
+import { useBasket } from "../context/basket";
+export default function Pizza({ pizza }) {
+  const { addToBasket } = useBasket();
+  const toast = useToast();
+  const { id, name, image, price,isVeg ,description} = pizza;
+
+  const handleAddToBasket = () => {
+    addToBasket(pizza);
+    toast({
+      title: "Basket",
+      description: "Pizza added in basket",
+      isClosable: true,
+    });
+  };
   return (
     <Box
       bg={useColorModeValue("white", "gray.700")}
@@ -26,20 +40,14 @@ export default function Pizza() {
       rounded="lg"
     >
       <AspectRatio maxW="400px" ratio={1 / 1} mx="auto">
-        <Image
-          rounded={"lg"}
-          objectFit={"cover"}
-          src={
-            "https://www.dominos.co.in/theme2/front/images/menu-images/my-nonveg.webp"
-          }
-        />
+        <Image rounded={"lg"} objectFit={"cover"} src={image} />
       </AspectRatio>
       <Box mt={4}>
         <HStack>
           <Heading flex={1} fontSize={"lg"}>
-            CHICKEN GOLDEN DELIGHT
+            {name}
           </Heading>
-          <Tooltip label="Non Veg Pizza">
+          <Tooltip label={isVeg ? "Veg Pizza":"Non Veg Pizza"}>
             <IconButton
               size={"sm"}
               rounded="full"
@@ -54,20 +62,20 @@ export default function Pizza() {
           </Tooltip>
         </HStack>
         <Text mt={2}>
-          Mmm! Barbeque chicken with a topping of golden corn loaded with extra
-          cheese. Worth its
+          {description}
         </Text>
         <HStack mt={6} justify={"space-between"} w="full">
           <Button
             size={"sm"}
             leftIcon={<GiShoppingCart size={20} />}
             colorScheme={"twitter"}
+            onClick={handleAddToBasket}
           >
             Add to Basket
           </Button>
           <Tag size={"lg"} rounded="full" variant="subtle" colorScheme="purple">
             <TagLeftIcon boxSize="20px" as={BiRupee} />
-            <TagLabel>140</TagLabel>
+            <TagLabel>{price}</TagLabel>
           </Tag>
         </HStack>
       </Box>
