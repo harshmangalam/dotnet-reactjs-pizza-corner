@@ -4,13 +4,12 @@ import { createContext, useState } from "react";
 const BasketContext = createContext();
 
 export default function BasketProvider({ children }) {
-  const [pizza, setPizza] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const addToBasket = (newPizza) => {
-    setPizza((pizza) => [...pizza, newPizza]);
+    setPizza((cart) => [...cart, { item: newPizza, count: 1 }]);
   };
 
-  
   return (
     <BasketContext.Provider value={{ pizza, addToBasket }}>
       {children}
@@ -18,5 +17,4 @@ export default function BasketProvider({ children }) {
   );
 }
 
-
-export const useBasket = () => useContext(BasketContext)
+export const useBasket = () => useContext(BasketContext);
