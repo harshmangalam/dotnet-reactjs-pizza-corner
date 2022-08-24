@@ -11,7 +11,7 @@ export default function BasketProvider({ children }) {
   };
 
   return (
-    <BasketContext.Provider value={{ pizza, addToBasket }}>
+    <BasketContext.Provider value={{ cart, addToBasket }}>
       {children}
     </BasketContext.Provider>
   );
