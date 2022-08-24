@@ -25,7 +25,16 @@ export default function Pizza({ pizza }) {
   const { id, name, image, price,isVeg ,description} = pizza;
 
   const handleAddToBasket = () => {
-    addToBasket(pizza);
+    const isAdded = addToBasket(pizza);
+    if(!isAdded){
+      toast({
+        title: "Basket",
+        description: "Pizza already in basket",
+        isClosable: true,
+        status:"error"
+      });
+      return
+    }
     toast({
       title: "Basket",
       description: "Pizza added in basket",
