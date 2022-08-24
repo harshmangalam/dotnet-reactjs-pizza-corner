@@ -19,6 +19,8 @@ import Pizza from "../components/Pizza";
 export default function HomePage() {
   return (
     <Box>
+
+      {/* home hero sction */}
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
@@ -110,14 +112,15 @@ export default function HomePage() {
           </Box>
         </Flex>
       </Stack>
-
+      
+      {/* featured category  */}
       <Box mt={8}>
         <Stack
           direction={["column", "row"]}
           justify={"space-between"}
           align="center"
         >
-          <Heading fontSize={["2xl", "3xl"]}>Fatured Categories</Heading>
+          <Heading fontSize={["2xl", "3xl"]}>Featured Categories</Heading>
           <Button
             rightIcon={<BsArrowRight size={20} />}
             as={Link}
@@ -139,6 +142,8 @@ export default function HomePage() {
           ))}
         </SimpleGrid>
       </Box>
+
+      {/* Trending pizza  */}
       <Box mt={8}>
         <Stack
           direction={["column", "row"]}
