@@ -1,14 +1,14 @@
 const express = require("express");
 const morgan = require("morgan");
-const moragn = require("morgan")
-const {pizzaRoutes} = require("./routes");
+const mongoose = require("mongoose");
+const { pizzaRoutes } = require("./routes");
 const app = express();
 
 app.use(express.json());
-app.use(morgan("dev"))
-app.get("/",(req,res,next)=>{
-    res.status(200).json({"message":"Server is up and running"})
-})
+app.use(morgan("dev"));
+app.get("/", (req, res, next) => {
+  res.status(200).json({ message: "Server is up and running" });
+});
 app.use("/api/pizza", pizzaRoutes);
 
 app.get("*", (req, res, next) => {
@@ -30,4 +30,15 @@ app.use("*", (err, req, res, next) => {
   });
 });
 
-app.listen(4000, () => console.log("listening on port 4000"));
+async function main() {
+  try {
+    await mongoose.connect("mongodb://localhost:27017/PizzaCorner");
+    console.log("Connected to database")
+    app.listen(4000, () => console.log("listening on port 4000"));
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
+
+main();
