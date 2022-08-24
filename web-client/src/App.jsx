@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import CartProvider from "./context/cart";
+import BasketProvider from "./context/basket";
 
 const HomePage = lazy(() => import("./pages/Home"));
 const PizzaPage = lazy(() => import("./pages/Pizza"));
@@ -28,7 +28,7 @@ axios.defaults.baseURL = "http://localhost:5045/api/";
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
+      <BasketProvider>
       <Stack justify={"space-between"} minH={"100vh"}>
         <Navbar />
         <Box py={6} flexGrow>
@@ -52,7 +52,7 @@ export default function App() {
         </Box>
         <Footer />
       </Stack>
-      </CartProvider>
+      </BasketProvider>
     </QueryClientProvider>
   );
 }

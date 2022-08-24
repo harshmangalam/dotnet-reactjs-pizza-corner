@@ -17,7 +17,7 @@ export default function PizzaPage() {
   return (
     <SimpleGrid columns={[1, 1, 2, 3, 4]} spacing={6}>
       {data.data.map((pizza) => (
-        <Pizza />
+        <Pizza pizza={pizza} />
       ))}
     </SimpleGrid>
   );

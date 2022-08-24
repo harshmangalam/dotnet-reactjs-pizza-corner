@@ -47,7 +47,8 @@ export default function Pizza({ pizza }) {
           <Heading flex={1} fontSize={"lg"}>
             {name}
           </Heading>
-          <Tooltip label={isVeg ? "Veg Pizza":"Non Veg Pizza"}>
+         <Box>
+         <Tooltip label={isVeg ? "Veg Pizza":"Non Veg Pizza"}>
             <IconButton
               size={"sm"}
               rounded="full"
@@ -60,6 +61,7 @@ export default function Pizza({ pizza }) {
               }
             />
           </Tooltip>
+         </Box>
         </HStack>
         <Text mt={2}>
           {description}
