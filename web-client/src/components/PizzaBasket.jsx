@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Badge,
   Box,
   Button,
   Divider,
@@ -21,13 +22,20 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { GiShoppingCart } from "react-icons/gi";
+import { useBasket } from "../context/basket";
 export default function PizzaBasket() {
+  const {cart} = useBasket()
   return (
     <Popover>
       <PopoverTrigger>
         <Box>
           <Tooltip label={"Pizza basket"}>
-            <IconButton icon={<GiShoppingCart size={24} />} />
+            <Box pos="relative">
+            <Button rightIcon={<GiShoppingCart size={24} />} >
+              {cart.length}
+              </Button>
+          
+            </Box>
           </Tooltip>
         </Box>
       </PopoverTrigger>
