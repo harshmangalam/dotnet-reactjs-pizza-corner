@@ -1,21 +1,20 @@
 const {Router}  = require("express");
 const {PizzaModel} = require("./models")
 
-const router = Router()
+const pizzaRoutes = Router()
 
-router.get("/pizza",async (req,res,next)=>{
+pizzaRoutes.get("/",async (req,res,next)=>{
     try {
-        // get all pizza
-        const pizza = await PizzaModel.find();
+        const pizza = await PizzaModel.find()
         return res.status(200).json(pizza)
 
     } catch (error) {
-        next(error)
+        return next(error)
     }
 })
 
 
-router.get("/pizza/:id",async (req,res,next)=>{
+pizzaRoutes.get("/:id",async (req,res,next)=>{
     try {
         // get pizza by id 
         const pizza = await PizzaModel.findById(req.params.id);
@@ -30,7 +29,7 @@ router.get("/pizza/:id",async (req,res,next)=>{
 })
 
 
-router.post("/pizza/",async (req,res,next)=>{
+pizzaRoutes.post("/",async (req,res,next)=>{
     try {
       
         const pizza = await PizzaModel.create({
@@ -45,4 +44,4 @@ router.post("/pizza/",async (req,res,next)=>{
 })
 
 
-module.exports = router
+exports.pizzaRoutes = pizzaRoutes
