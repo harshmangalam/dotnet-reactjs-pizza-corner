@@ -55,7 +55,7 @@ export default function Pizza({ pizza }) {
               icon={
                 <Icon
                   as={MdOutlineRadioButtonChecked}
-                  color="red.300"
+                  color={isVeg ? "green.500":"red.300"}
                   fontSize="lg"
                 />
               }
