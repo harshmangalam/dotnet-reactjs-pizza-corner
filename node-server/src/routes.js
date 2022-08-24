@@ -16,15 +16,15 @@ pizzaRoutes.get("/",async (req,res,next)=>{
 
 pizzaRoutes.get("/:id",async (req,res,next)=>{
     try {
-        // get pizza by id 
+        
         const pizza = await PizzaModel.findById(req.params.id);
         if(!pizza){
-            next({status:404,error:"Pizza not found"})
+           return next({status:404,error:"Pizza not found"})
         }
         return res.status(200).json(pizza)
 
     } catch (error) {
-        next(error)
+       return next(error)
     }
 })
 
@@ -36,10 +36,10 @@ pizzaRoutes.post("/",async (req,res,next)=>{
             ...req.body
         })
        
-        return res.status(200).json(pizza)
+        return res.status(201).json(pizza)
 
     } catch (error) {
-        next(error)
+        return next(error)
     }
 })
 
