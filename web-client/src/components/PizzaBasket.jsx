@@ -67,7 +67,7 @@ export default function PizzaBasket() {
           <Flex justifyContent={"center"}>
             <Button
               as={Link}
-              to="/baskets"
+              to="/basket"
               colorScheme={"blue"}
               variant={"ghost"}
               rounded="full"
