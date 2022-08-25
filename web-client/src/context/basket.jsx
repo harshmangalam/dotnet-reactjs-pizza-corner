@@ -34,7 +34,7 @@ export default function BasketProvider({ children }) {
     setCart(finalCart);
   };
 
-  const descreaseBasketPizzaCount = (pizzaId) => {
+  const decreaseBasketPizzaCount = (pizzaId) => {
     const finalCart = cart.map((c) => {
       if (c.item._id === pizzaId) {
         return {
@@ -54,7 +54,7 @@ export default function BasketProvider({ children }) {
         addToBasket,
         removeFromBasket,
         increaseBasketPizzaCount,
-        descreaseBasketPizzaCount,
+        decreaseBasketPizzaCount,
       }}
     >
       {children}

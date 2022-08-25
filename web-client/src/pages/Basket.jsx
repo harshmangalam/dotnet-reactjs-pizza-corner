@@ -16,14 +16,15 @@ import { useBasket } from "../context/basket";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 export default function BasketPage() {
-  const { cart, increaseBasketPizzaCount } = useBasket();
+  const { cart, increaseBasketPizzaCount, decreaseBasketPizzaCount } =
+    useBasket();
 
   const totalItems = cart.reduce((prev, curr) => prev + curr.count, 0);
   const totalPrice = cart.reduce(
     (prev, curr) => prev + curr.item.price * curr.count,
     0
   );
-  const disabledCheckout = totalItems === 0 && totalPrice === 0
+  const disabledCheckout = totalItems === 0 && totalPrice === 0;
   return (
     <Container>
       <SimpleGrid spacing={6} columns={1}>
@@ -46,6 +47,8 @@ export default function BasketPage() {
                       size={"sm"}
                       icon={<AiOutlineMinus size={16} />}
                       aria-label="Minus"
+                      onClick={() => decreaseBasketPizzaCount(data.item._id)}
+                      disabled={data.count <= 1}
                     />
                     <Heading fontSize={"md"}>{data.count}</Heading>
 
