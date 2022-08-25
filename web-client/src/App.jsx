@@ -18,6 +18,8 @@ const CategoryPage = lazy(() => import("./pages/Category"));
 const CategoryListPage = lazy(() => import("./pages/Category/List"));
 const CategoryDetailPage = lazy(() => import("./pages/Category/Details"));
 
+const BasketPage = lazy(()=>import("./pages/Basket"))
+
 // react query client instance
 const queryClient = new QueryClient();
 
@@ -37,6 +39,7 @@ export default function App() {
               <Routes>
                 <Route path="" element={<HomePage />} />
                 <Route path="pizza" element={<PizzaPage />} />
+                <Route path="basket" element={<BasketPage />} />
                 <Route path="auth" element={<AuthPage />}>
                   <Route index element={<AuthLoginPage />} />
                   <Route path="signup" element={<AuthSignupPage />} />
