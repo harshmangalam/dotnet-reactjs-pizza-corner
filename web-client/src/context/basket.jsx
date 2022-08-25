@@ -27,6 +27,8 @@ export default function BasketProvider({ children }) {
           ...c,
           count: c.count + 1,
         };
+      }else{
+        return c
       }
     });
     setCart(finalCart);
