@@ -31,7 +31,7 @@ export default function BasketPage() {
         <Box>
           <Stack spacing={4}>
             {cart.map((data) => (
-              <HStack justify={"space-between"}>
+              <Stack direction={["column","row"]} justify={"space-between"} align={"center"}>
                 <HStack spacing={6}>
                   <Avatar src={data.item.image} size={"xl"} />
                   <Stack spacing={0}>
@@ -60,7 +60,7 @@ export default function BasketPage() {
                     />
                   </HStack>
                 </Box>
-              </HStack>
+              </Stack>
             ))}
           </Stack>
         </Box>
@@ -73,6 +73,12 @@ export default function BasketPage() {
         >
           <Stack spacing={4}>
             <Heading fontSize={"3xl"}>Checkout Details</Heading>
+            <HStack justify={"space-between"}>
+              <Text fontSize={"xl"}>Basket Count</Text>
+              <Tag size={"lg"} fontSize={"md"}>
+                {cart.length}
+              </Tag>
+            </HStack>
             <HStack justify={"space-between"}>
               <Text fontSize={"xl"}>Total Item(s)</Text>
               <Tag size={"lg"} fontSize={"md"}>
