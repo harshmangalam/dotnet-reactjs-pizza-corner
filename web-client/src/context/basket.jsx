@@ -27,16 +27,35 @@ export default function BasketProvider({ children }) {
           ...c,
           count: c.count + 1,
         };
-      }else{
-        return c
+      } else {
+        return c;
       }
     });
     setCart(finalCart);
   };
 
+  const descreaseBasketPizzaCount = (pizzaId) => {
+    const finalCart = cart.map((c) => {
+      if (c.item._id === pizzaId) {
+        return {
+          ...c,
+          count: c.count - 1,
+        };
+      } else {
+        return c;
+      }
+    });
+    setCart(finalCart);
+  };
   return (
     <BasketContext.Provider
-      value={{ cart, addToBasket, removeFromBasket, increaseBasketPizzaCount }}
+      value={{
+        cart,
+        addToBasket,
+        removeFromBasket,
+        increaseBasketPizzaCount,
+        descreaseBasketPizzaCount,
+      }}
     >
       {children}
     </BasketContext.Provider>
