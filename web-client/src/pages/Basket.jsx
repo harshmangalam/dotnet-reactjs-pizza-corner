@@ -10,14 +10,19 @@ import {
   Stack,
   Tag,
   Text,
+  Tooltip,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useBasket } from "../context/basket";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineMinus, AiOutlineDelete } from "react-icons/ai";
 
 export default function BasketPage() {
-  const { cart, increaseBasketPizzaCount, decreaseBasketPizzaCount } =
-    useBasket();
+  const {
+    cart,
+    increaseBasketPizzaCount,
+    decreaseBasketPizzaCount,
+    removeFromBasket,
+  } = useBasket();
 
   const totalItems = cart.reduce((prev, curr) => prev + curr.count, 0);
   const totalPrice = cart.reduce(
@@ -31,7 +36,11 @@ export default function BasketPage() {
         <Box>
           <Stack spacing={4}>
             {cart.map((data) => (
-              <Stack direction={["column","row"]} justify={"space-between"} align={"center"}>
+              <Stack
+                direction={["column", "row"]}
+                justify={"space-between"}
+                align={"center"}
+              >
                 <HStack spacing={6}>
                   <Avatar src={data.item.image} size={"xl"} />
                   <Stack spacing={0}>
@@ -39,6 +48,17 @@ export default function BasketPage() {
                     <Text fontSize={"lg"}>
                       Rs {data.item.price * data.count}
                     </Text>
+                    <Box>
+                      <Tooltip label="Remove Item">
+                        <IconButton
+                          icon={<AiOutlineDelete size={20} />}
+                          colorScheme="red"
+                          variant={"outline"}
+                          size={"sm"}
+                          onClick={()=>removeFromBasket(data.item._id)}
+                        />
+                      </Tooltip>
+                    </Box>
                   </Stack>
                 </HStack>
                 <Box>
