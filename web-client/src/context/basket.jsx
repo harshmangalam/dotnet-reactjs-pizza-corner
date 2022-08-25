@@ -15,6 +15,11 @@ export default function BasketProvider({ children }) {
     return true
   };
 
+  const removeFromBasket = (newPizza) => {
+    const filteredCart = cart.filter(c=>c.item._id !== newPizza._id)
+    setCart(filteredCart);
+  };
+
   return (
     <BasketContext.Provider value={{ cart, addToBasket }}>
       {children}
