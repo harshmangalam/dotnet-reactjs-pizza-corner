@@ -9,11 +9,12 @@ import {
   Button,
   Icon,
 } from "@chakra-ui/react";
-import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaNodeJs, FaReact, FaTwitter } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { SiDevdotto } from "react-icons/si";
+import { SiChakraui, SiDevdotto } from "react-icons/si";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
+import { DiDotnet } from "react-icons/di";
 const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
@@ -31,55 +32,50 @@ export default function LargeWithLogoCentered() {
       <Container as={Stack} maxW={"container.xl"} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={"flex-start"}>
-            <ListHeader>Category</ListHeader>
-            {[...new Array(4)].map((pizza) => (
+            <ListHeader>Technology</ListHeader>
+            {technology.map((link) => (
               <Button
-                variant="link"
-                fontWeight={"normal"}
-                _hover={{
-                  textTransform: "none",
-                  shadow: "outline",
-                }}
-                as={Link}
-                to="/pizza/3refref"
+                variant={"outline"}
+                size="sm"
+                key={link.name}
+                as={"a"}
+                target="_blank"
+                href={link.href}
+                leftIcon={<Icon as={link.icon} fontSize="lg" />}
               >
-                Non vegg pizza
+                {link.name}
               </Button>
             ))}
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Company</ListHeader>
-            {company.map((link) => (
-              <Button
-                as={Link}
-                variant="link"
-                fontWeight={"normal"}
-                _hover={{
-                  textTransform: "none",
-                  shadow: "outline",
-                }}
-                to={link.href}
-              >
-                {link.name}
-              </Button>
-            ))}
+            <Stack align={"start"} spacing={4}>
+              {company.map((link) => (
+                <Button
+                  as={Link}
+                  variant="link"
+                  fontWeight={"normal"}
+                  to={link.href}
+                >
+                  {link.name}
+                </Button>
+              ))}
+            </Stack>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Locations</ListHeader>
-            {locations.map((link) => (
-              <Button
-                variant="link"
-                fontWeight={"normal"}
-                _hover={{
-                  textTransform: "none",
-                  shadow: "outline",
-                }}
-                as={Link}
-                to={link.href}
-              >
-                {link.name}
-              </Button>
-            ))}
+            <Stack align={"start"} spacing={4}>
+              {locations.map((link) => (
+                <Button
+                  variant="link"
+                  fontWeight={"normal"}
+                  as={Link}
+                  to={link.href}
+                >
+                  {link.name}
+                </Button>
+              ))}
+            </Stack>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Social Media</ListHeader>
@@ -171,4 +167,27 @@ const locations = [
   { name: "Delhi", href: "/" },
   { name: "Surat", href: "/" },
   { name: "Kolkata", href: "/" },
+];
+
+const technology = [
+  {
+    name: "Dotnet",
+    icon: DiDotnet,
+    href: "https://dotnet.microsoft.com",
+  },
+  {
+    name: "Node JS",
+    icon: FaNodeJs,
+    href: "https://nodejs.org/",
+  },
+  {
+    name: "React JS",
+    icon: FaReact,
+    href: "https://reactjs.org/",
+  },
+  {
+    name: "Chakra UI",
+    icon: SiChakraui,
+    href: "https://chakra-ui.com/",
+  },
 ];
