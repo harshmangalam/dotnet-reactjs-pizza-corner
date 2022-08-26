@@ -1,5 +1,5 @@
 import { Box, Container, Heading, HStack, Icon, Image } from "@chakra-ui/react";
-import ProfileMenu from "./ProfileMenu";
+// import ProfileMenu from "./ProfileMenu";
 import ThemeSwitcher from "./ThemeSwitcher";
 import PizzaBasket from "./PizzaBasket";
 import Logo from "./Logo";
