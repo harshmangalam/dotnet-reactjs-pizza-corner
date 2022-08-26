@@ -81,7 +81,7 @@ export default function HomePage() {
               as={Link}
               rounded={"full"}
               size={"lg"}
-              colorScheme="pink"
+              colorScheme="purple"
               px={6}
               rightIcon={<BsArrowRight size={20} />}
             >
