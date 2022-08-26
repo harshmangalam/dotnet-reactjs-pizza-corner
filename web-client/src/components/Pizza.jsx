@@ -22,7 +22,7 @@ import { useBasket } from "../context/basket";
 export default function Pizza({ pizza }) {
   const { addToBasket } = useBasket();
   const toast = useToast();
-  const { id, name, image, price,isVeg ,description} = pizza;
+  const { _id, name, image, price,isVeg ,description} = pizza;
 
   const handleAddToBasket = () => {
     const isAdded = addToBasket(pizza);

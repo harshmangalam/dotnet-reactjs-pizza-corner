@@ -9,17 +9,31 @@ import {
   Icon,
   useColorModeValue,
   SimpleGrid,
-  HStack,
 } from "@chakra-ui/react";
+import { useQuery } from "@tanstack/react-query";
+import {fetchCategories} from "../services/category"
+import {fetchPizza} from "../services/pizza"
 import { AiOutlineUserAdd } from "react-icons/ai";
 import Category from "../components/Category";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import Pizza from "../components/Pizza";
 export default function HomePage() {
+  const {
+    isLoading: isCategoryLoading,
+    isError: isCategoryError,
+    data: categoryData,
+    error: categoryError,
+  } = useQuery(["categories"], fetchCategories);
+
+  const {
+    isLoading: isPizzaLoading,
+    isError: isPizzaError,
+    data: pizzaData,
+    error: pizzaError,
+  } = useQuery(["pizza"], fetchPizza);
   return (
     <Box>
-
       {/* home hero sction */}
       <Stack
         align={"center"}
@@ -112,7 +126,7 @@ export default function HomePage() {
           </Box>
         </Flex>
       </Stack>
-      
+
       {/* featured category  */}
       <Box mt={8}>
         <Stack
@@ -137,8 +151,8 @@ export default function HomePage() {
           columns={[1, 2, 3, 4]}
           spacing={6}
         >
-          {[...new Array(4)].map((category) => (
-            <Category />
+          {categoryData?.data?.map((category) => (
+            <Category key={category.id} {...category} />
           ))}
         </SimpleGrid>
       </Box>
@@ -167,8 +181,8 @@ export default function HomePage() {
           columns={[1, 2, 3, 4]}
           spacing={6}
         >
-          {[...new Array(4)].map((pizza) => (
-            <Pizza />
+          {pizzaData?.data?.map((pizza) => (
+            <Pizza key={pizza._id} pizza={pizza} />
           ))}
         </SimpleGrid>
       </Box>
