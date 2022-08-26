@@ -53,7 +53,7 @@ export default function Pizza({ pizza }) {
       </AspectRatio>
       <Box mt={4}>
         <HStack>
-          <Heading flex={1} fontSize={"lg"}>
+          <Heading flex={1} fontSize={"xl"} noOfLines={2}>
             {name}
           </Heading>
          <Box>
@@ -72,7 +72,7 @@ export default function Pizza({ pizza }) {
           </Tooltip>
          </Box>
         </HStack>
-        <Text mt={2}>
+        <Text mt={2} noOfLines={2}>
           {description}
         </Text>
         <HStack mt={6} justify={"space-between"} w="full">
