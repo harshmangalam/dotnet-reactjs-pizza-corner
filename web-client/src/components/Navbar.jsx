@@ -9,9 +9,7 @@ export default function Navbar() {
       <Container maxW={"container.xl"}>
         <HStack h={16} justify="space-between">
           <Logo />
-
           <HStack>
-           
             <PizzaBasket />
             <ThemeSwitcher />
           </HStack>
