@@ -11,7 +11,7 @@ export default function Navbar() {
           <Logo />
 
           <HStack>
-            <ProfileMenu />
+           
             <PizzaBasket />
             <ThemeSwitcher />
           </HStack>
