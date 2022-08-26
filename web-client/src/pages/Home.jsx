@@ -66,7 +66,7 @@ export default function HomePage() {
             direction={{ base: "column", sm: "row" }}
           >
             <Button
-              to="/pizza"
+              to="/category"
               as={Link}
               rounded={"full"}
               size={"lg"}
@@ -74,18 +74,18 @@ export default function HomePage() {
               px={6}
               rightIcon={<BsArrowRight size={20} />}
             >
-              Explore Now
+              Explore Category
             </Button>
             <Button
+              to="/pizza"
               as={Link}
-              to="/auth"
               rounded={"full"}
               size={"lg"}
-              fontWeight={"normal"}
+              colorScheme="pink"
               px={6}
-              leftIcon={<AiOutlineUserAdd size={24} />}
+              rightIcon={<BsArrowRight size={20} />}
             >
-              Authenticate
+              Explore Pizza
             </Button>
           </Stack>
         </Stack>
