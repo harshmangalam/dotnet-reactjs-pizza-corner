@@ -19,10 +19,11 @@ import { BiRupee } from "react-icons/bi";
 import { GiShoppingCart } from "react-icons/gi";
 import { MdOutlineRadioButtonChecked } from "react-icons/md";
 import { useBasket } from "../context/basket";
+import { Link } from "react-router-dom";
 export default function Pizza({ pizza }) {
   const { addToBasket } = useBasket();
   const toast = useToast();
-  const { _id, name, image, price,isVeg ,description} = pizza;
+  const { _id, name, image, price,isVeg ,description,category} = pizza;
 
   const handleAddToBasket = () => {
     const isAdded = addToBasket(pizza);
@@ -52,10 +53,13 @@ export default function Pizza({ pizza }) {
         <Image rounded={"lg"} objectFit={"cover"} src={image} />
       </AspectRatio>
       <Box mt={4}>
+        <Tag as={Link} to={`/category/${category.id}`}>{category.name}</Tag>
         <HStack>
-          <Heading flex={1} fontSize={"xl"} noOfLines={2}>
+         <Tooltip label={name}>
+         <Heading flex={1} fontSize={"xl"} noOfLines={1}>
             {name}
           </Heading>
+         </Tooltip>
          <Box>
          <Tooltip label={isVeg ? "Veg Pizza":"Non Veg Pizza"}>
             <IconButton

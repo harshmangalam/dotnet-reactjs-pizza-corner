@@ -1,47 +1,52 @@
-const {Router}  = require("express");
-const {PizzaModel} = require("./models")
+const { Router } = require("express");
+const { PizzaModel } = require("./models");
 
-const pizzaRoutes = Router()
+const pizzaRoutes = Router();
 
-pizzaRoutes.get("/",async (req,res,next)=>{
-    try {
-        const pizza = await PizzaModel.find()
-        return res.status(200).json(pizza)
+pizzaRoutes.get("/", async (req, res, next) => {
+  try {
+    const pizza = await PizzaModel.find();
+    return res.status(200).json(pizza);
+  } catch (error) {
+    return next(error);
+  }
+});
 
-    } catch (error) {
-        return next(error)
+pizzaRoutes.get("/category/:id", async (req, res, next) => {
+  try {
+    console.log(req.params.id);
+    const pizzas = await PizzaModel.find({
+      "category.id": req.params.id,
+    });
+
+    return res.status(200).json(pizzas);
+  } catch (error) {
+    return next(error);
+  }
+});
+
+pizzaRoutes.get("/:id", async (req, res, next) => {
+  try {
+    const pizza = await PizzaModel.findById(req.params.id);
+    if (!pizza) {
+      return next({ status: 404, error: "Pizza not found" });
     }
-})
+    return res.status(200).json(pizza);
+  } catch (error) {
+    return next(error);
+  }
+});
 
+pizzaRoutes.post("/", async (req, res, next) => {
+  try {
+    const pizza = await PizzaModel.create({
+      ...req.body,
+    });
 
-pizzaRoutes.get("/:id",async (req,res,next)=>{
-    try {
-        
-        const pizza = await PizzaModel.findById(req.params.id);
-        if(!pizza){
-           return next({status:404,error:"Pizza not found"})
-        }
-        return res.status(200).json(pizza)
+    return res.status(201).json(pizza);
+  } catch (error) {
+    return next(error);
+  }
+});
 
-    } catch (error) {
-       return next(error)
-    }
-})
-
-
-pizzaRoutes.post("/",async (req,res,next)=>{
-    try {
-      
-        const pizza = await PizzaModel.create({
-            ...req.body
-        })
-       
-        return res.status(201).json(pizza)
-
-    } catch (error) {
-        return next(error)
-    }
-})
-
-
-exports.pizzaRoutes = pizzaRoutes
+exports.pizzaRoutes = pizzaRoutes;

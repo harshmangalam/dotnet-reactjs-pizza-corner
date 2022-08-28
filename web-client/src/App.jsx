@@ -34,7 +34,7 @@ export default function App() {
       <BasketProvider>
       <Stack justify={"space-between"} minH={"100vh"}>
         <Navbar />
-        <Box py={6} flexGrow>
+        <Box py={6} flexGrow={1}>
           <Container maxW={"container.xl"}>
             <Suspense fallback={<p>Loading Page...</p>}>
               <Routes>
