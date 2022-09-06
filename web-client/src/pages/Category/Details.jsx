@@ -37,7 +37,7 @@ export default function CategoryDetailsPage() {
         {isPizzaLoading && <Spinner size={"lg"} />}
         {isPizzaError && <p>Error...</p>}
         {pizzaData?.data && (
-          <SimpleGrid columns={[1, 1, 2, 3]} spacing={6}>
+          <SimpleGrid columns={[1, 1, 2, 3,4]} spacing={6}>
             {pizzaData.data.map((pizza) => (
               <Pizza key={pizza._id} pizza={pizza} />
             ))}

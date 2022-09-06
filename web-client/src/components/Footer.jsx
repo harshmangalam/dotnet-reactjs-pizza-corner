@@ -116,7 +116,7 @@ export default function LargeWithLogoCentered() {
           <Logo />
         </Flex>
         <Text pt={6} fontSize={"sm"} textAlign={"center"} fontFamily="cursive">
-          Pizza Corner An Open Source Project Developed In India
+          Pizza Corner An Open Source Project
         </Text>
       </Box>
     </Box>

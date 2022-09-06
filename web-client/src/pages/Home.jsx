@@ -53,7 +53,7 @@ export default function HomePage() {
             </Text>
             <br />
             <Text as={"span"} color={"blue.400"}>
-              Explore and order
+              Explore And Order
             </Text>
           </Heading>
           <Text color={"gray.500"}>
